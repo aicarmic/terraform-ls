@@ -119,7 +119,7 @@ func (s *Storage) ObtainSchemasForModule(tf *exec.Executor, dir string) error {
 	go func() {
 		err := s.obtainSchemasForModule(tf, dir)
 		if err != nil {
-			s.logger.Println("error obtaining schemas:", err)
+			s.logger.Printf("error obtaining schemas for %s: %s", dir, err)
 		}
 	}()
 
